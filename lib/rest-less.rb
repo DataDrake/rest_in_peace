@@ -1,5 +1,5 @@
 require 'net/http'
-module RIP
+module RL
 	VERSION = '0.1.0'
 	def self.request(method,uri,headers={},body=nil, limit=10)
 		raise 'Redirect limit exceeded' if limit == 0

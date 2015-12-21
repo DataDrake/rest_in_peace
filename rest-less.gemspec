@@ -1,4 +1,4 @@
-require_relative 'lib/rest_in_peace'
+require_relative 'lib/restinpeace'
 Gem::Specification.new do |s|
 	s.name        = 'rest_in_peace'
 	s.version     = RIP::VERSION
