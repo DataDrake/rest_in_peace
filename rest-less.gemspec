@@ -10,5 +10,4 @@ Gem::Specification.new do |s|
 	s.files       =  %w(lib/rest-less.rb LICENSE README.md)
 	s.homepage    = 'http://rubygems.org/gems/rest-less'
 	s.license     = 'MIT'
-	s.add_runtime_dependency 'net/http'
 end
