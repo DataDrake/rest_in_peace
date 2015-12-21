@@ -1,6 +1,6 @@
 require 'net/http'
 module RL
-	VERSION = '0.1.0'
+	VERSION = '0.1.1'
 	def self.request(method,uri,headers={},body=nil, limit=10)
 		raise 'Redirect limit exceeded' if limit == 0
 		uri = URI(uri)
