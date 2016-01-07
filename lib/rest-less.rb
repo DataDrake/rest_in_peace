@@ -1,6 +1,6 @@
 require 'net/http'
 module RL
-	VERSION = '0.1.2'
+	VERSION = '0.1.3'
 	def self.request(method,uri,headers={},body=nil, limit=10)
 		raise 'Redirect limit exceeded' if limit == 0
 		uri = URI(uri)
@@ -14,7 +14,12 @@ module RL
 			when Net::HTTPRedirection
 				request(method,res['location'],headers,body, limit - 1)
 			else
-				[res.code.to_i,res.to_hash,res.body]
+				new_headers = {}
+				headers = res.to_hash
+				headers.each_key do |k|
+					new_headers[k] = headers[k][0]
+				end
+				[res.code.to_i,new_headers,res.body]
 		end
 	end
 end
